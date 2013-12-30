@@ -1,18 +1,17 @@
-[diff]
-    external = git_diff_wrapper
-[pager]
-    diff =
 [alias]
-    st = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
     lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [user]
-	email = dccmx@dccmx.com
-	name = dccmx
-[color]
-	ui = true
+	email = techird@qq.com
+	name = techird
 [push]
-	default = matching
+  default = simple
+[http]
+  proxy = 172.19.1.2:9217
+[core]
+	excludesfile = /Users/techird/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
