@@ -78,6 +78,16 @@ fi
 #by dccmx
 set -o vi
 
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
 . ~/.bash/aliase
 . ~/.bash/export
 . ~/.bash/function

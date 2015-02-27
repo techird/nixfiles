@@ -44,9 +44,14 @@ elif [[ $OSTYPE == darwin* ]]; then
 fi
 
 alias info='info --vi-keys'
+alias http='open "http://127.0.0.1/$(pwd | grep -o "\w*$")"'
 
 alias c='clear'
 
 alias home='cd ~'
 
-alias ip="ifconfig | grep 'inet \([0-9.]\)*' -o"
+alias ip="ifconfig | grep 'inet 172\.\([0-9.]\)*' -o | grep 172.*$ -o"
+
+alias sb.="sb ."
+
+alias wless='wr --exec "lessc --source-map less/page.less css/page.css" less'
